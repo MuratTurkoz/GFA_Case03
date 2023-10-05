@@ -11,27 +11,40 @@ public class PlayerRagdoll : MonoBehaviour
     private ObjectState _currentState;
     private void Awake()
     {
+        GameSession.Instance.IsDied = false;
+        GameSession.Instance.Health = 5;
         //_camera = Camera.main;
         _rigidBodies = GetComponentsInChildren<Rigidbody>();
         _characterController = GetComponent<CharacterController>();
+        _characterController.enabled = true;
         _animators = GetComponent<Animator>();
-        OnDisableRagdoll();
+        _animators.enabled = true;
+        //OnDisableRagdoll();
         _currentState = ObjectState.Running;
+     
+    }
+    private void Start()
+    {
+        //OnDisableRa/*g*/doll();
     }
 
     private void Update()
     {
-
-        switch (_currentState)
+        if (GameSession.Instance.IsDied==false)
         {
-            case ObjectState.Running:
-                Running();
-                break;
-            case ObjectState.Ragdoll:
-                Ragdoll();
-                break; ;
+            switch (_currentState)
+            {
+                case ObjectState.Running:
+                    Running();
+                    break;
+                case ObjectState.Ragdoll:
+                    Ragdoll();
+                    break; ;
+
+            }
 
         }
+ 
         //// Ýleri doðru bir ýþýn çýkararak çarpýþmayý kontrol etmek için Raycast kullanabilirsiniz
         //Vector3 raycastOrigin = transform.position + _characterController.center; // Iþýnýn baþlangýç noktasý
 
@@ -91,6 +104,7 @@ public class PlayerRagdoll : MonoBehaviour
         {
             _currentState = ObjectState.Ragdoll;
         }
+
     }
     private void Ragdoll()
     {

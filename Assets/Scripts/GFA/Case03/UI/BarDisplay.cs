@@ -11,6 +11,7 @@ public class BarDisplay : MonoBehaviour
     private void OnEnable()
     {
         GameSession.Instance.HealthChanged += OnChangedHealth;
+        UpdateHealthDisplay();
     }
     private void OnDisable()
     {

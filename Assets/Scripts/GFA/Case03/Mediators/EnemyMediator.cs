@@ -23,7 +23,7 @@ namespace GFA.Case03.Mediators
         //{
         //    //_itemDropper = GetComponent<ItemDropper>();
         //    _attacker = GetComponent<EnemyAttacker>();
-        //    _enemyAnimation = GetComponent<EnemyAnimation>();
+        //    //_enemyAnimation = GetComponent<EnemyAnimation>();
         //    _aiController = GetComponent<AIController>();
         //}
 
@@ -39,7 +39,7 @@ namespace GFA.Case03.Mediators
 
         //private void OnAttackerAttacked(IDamageable obj)
         //{
-        //    _enemyAnimation.PlayAttackAnimation();
+        //    //_enemyAnimation.PlayAttackAnimation();
         //}
 
         //public void ApplyDamage(float damage, GameObject causer = null)
@@ -75,7 +75,7 @@ namespace GFA.Case03.Mediators
         //private void OnTriggerEnter(Collider other)
         //{
         //    if (other.CompareTag("BaseBall")) { 
-            
+
         //    }
         //}
     }

@@ -15,7 +15,7 @@ MonoBehaviour:
   _entries:
   - _duration: 300
     _prefabs:
-    - {fileID: 8773482710229021474, guid: 97673c9cc6717dc44b073e3383b2476d, type: 3}
+    - {fileID: 2333545001853929073, guid: 0a2d76432ec2edf46ad23e9e5b358bee, type: 3}
     _spawnCount: 1000
   - _duration: 300
     _prefabs:

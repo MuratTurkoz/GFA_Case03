@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class GameSession : MonoBehaviour
 {
@@ -44,6 +45,8 @@ public class GameSession : MonoBehaviour
             if (Health <= 0)
             {
                 _isDied = true;
+              int index=  SceneManager.GetActiveScene().buildIndex;
+                SceneManager.LoadScene(index);
             }
             _health = value;
             HealthChanged?.Invoke(_health);

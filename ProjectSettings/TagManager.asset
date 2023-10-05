@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BaseBall
   - Zombie
+  - Obstacle
   layers:
   - Default
   - TransparentFX

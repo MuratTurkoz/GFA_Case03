@@ -29,6 +29,7 @@ namespace GFA.Case03.MatchSystem
 
         private void CreatePoolObjects()
         {
+            
             int totalSpawnCount = 0;
             foreach (var entry in _enemySpawnData.Entries)
             {
@@ -42,12 +43,18 @@ namespace GFA.Case03.MatchSystem
             {
                 for (int i = 0; i < entry.SpawnCount; i++)
                 {
-                    var objToSpawn = entry.Prefabs[Random.Range(0, entry.Prefabs.Length)];
-                    var inst = Instantiate(objToSpawn, Vector3.zero, Quaternion.identity);
-                    inst.SetActive(false);
-                    _pooledObjects[currentSpawnedIndex] = inst;
+                    if (GameSession.Instance.IsDied == false)
+                    {
+                        var objToSpawn = entry.Prefabs[Random.Range(0, entry.Prefabs.Length)];
+                        var inst = Instantiate(objToSpawn, Vector3.zero, Quaternion.identity);
+                        inst.SetActive(false);
+                        _pooledObjects[currentSpawnedIndex] = inst;
 
-                    currentSpawnedIndex++;
+                        currentSpawnedIndex++;
+                    }
+                    else
+                        return;
+                
                 }
             }
         }
